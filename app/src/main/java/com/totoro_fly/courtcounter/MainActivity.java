@@ -116,4 +116,8 @@ public class MainActivity extends Activity {
         dipalyForTeamA();
         dipalyForTeamB();
     }
+
+    public void eixtButton(View view) {
+        System.exit(0);
+    }
 }
