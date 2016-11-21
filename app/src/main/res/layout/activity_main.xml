@@ -8,7 +8,8 @@
     android:descendantFocusability="beforeDescendants"
     android:focusable="true"
     android:orientation="vertical"
-    tools:context="com.totoro_fly.courtcounter.MainActivity">
+    tools:context="com.totoro_fly.courtcounter.MainActivity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +56,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
-                android:onClick="AddThreeForTeamABottom"
+                android:onClick="addThreeForTeamABottom"
                 android:text="+3 points"
                 android:textAllCaps="true"
                 />
@@ -66,7 +67,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
-                android:onClick="AddTwoForTeamABottom"
+                android:onClick="addTwoForTeamABottom"
                 android:text="+2 points"
                 android:textAllCaps="true"
                 />
@@ -76,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
-                android:onClick="AddOneForTeamABottom"
+                android:onClick="addOneForTeamABottom"
                 android:text="free throw"
                 android:textAllCaps="true"
                 />
@@ -127,7 +128,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
-                android:onClick="AddThreeForTeamBBottom"
+                android:onClick="addThreeForTeamBBottom"
                 android:text="+3 points"
                 android:textAllCaps="true"
                 />
@@ -138,7 +139,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
-                android:onClick="AddTwoForTeamBBottom"
+                android:onClick="addTwoForTeamBBottom"
                 android:text="+2 points"
                 android:textAllCaps="true"
                 />
@@ -148,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
-                android:onClick="AddOneForTeamBBottom"
+                android:onClick="addOneForTeamBBottom"
                 android:text="free throw"
                 android:textAllCaps="true"
                 />

@@ -21,40 +21,39 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-    public void AddThreeForTeamABottom(View view) {
-        arrayList.add("A3");
-        teamAScore = teamAScore + 3;
+    public void addThreeForTeamABottom(View view) {
+        addPointForTeamA(3);
+    }
+
+    public void addTwoForTeamABottom(View view) {
+        addPointForTeamA(2);
+    }
+
+    public void addOneForTeamABottom(View view) {
+        addPointForTeamA(1);
+    }
+
+    private void addPointForTeamA(int point) {
+        arrayList.add("A" + point);
+        teamAScore = teamAScore + point;
         dipalyForTeamA();
     }
 
-    public void AddTwoForTeamABottom(View view) {
-        arrayList.add("A2");
-        teamAScore = teamAScore + 2;
-        dipalyForTeamA();
+    public void addThreeForTeamBBottom(View view) {
+        addPointForTeamB(3);
     }
 
-    public void AddOneForTeamABottom(View view) {
-        arrayList.add("A1");
-        teamAScore++;
-        dipalyForTeamA();
+    public void addTwoForTeamBBottom(View view) {
+        addPointForTeamB(2);
     }
 
-
-    public void AddThreeForTeamBBottom(View view) {
-        arrayList.add("B3");
-        teamBScore = teamBScore + 3;
-        dipalyForTeamB();
+    public void addOneForTeamBBottom(View view) {
+        addPointForTeamB(1);
     }
 
-    public void AddTwoForTeamBBottom(View view) {
-        arrayList.add("B2");
-        teamBScore = teamBScore + 2;
-        dipalyForTeamB();
-    }
-
-    public void AddOneForTeamBBottom(View view) {
-        arrayList.add("B1");
-        teamBScore++;
+    private void addPointForTeamB(int point) {
+        arrayList.add("B" + point);
+        teamBScore = teamBScore + point;
         dipalyForTeamB();
     }
 
