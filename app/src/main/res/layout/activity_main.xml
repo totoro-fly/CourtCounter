@@ -5,8 +5,6 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:descendantFocusability="beforeDescendants"
-    android:focusable="true"
     android:orientation="vertical"
     tools:context="com.totoro_fly.courtcounter.MainActivity"
     >
@@ -19,9 +17,11 @@
 
         <LinearLayout
             android:layout_width="0dp"
+            android:id="@+id/focus_linear_layout"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:focusableInTouchMode="true"
             android:orientation="vertical">
 
             <EditText
@@ -190,4 +190,5 @@
         android:text="exit"
         android:textAllCaps="true"
         />
+
 </RelativeLayout>

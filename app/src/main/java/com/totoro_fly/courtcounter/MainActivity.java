@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,12 +15,20 @@ public class MainActivity extends Activity {
     int teamBScore = 0;
     //记录每次按键，用于回退。
     ArrayList arrayList = new ArrayList();
+    EditText editTextA;
+    EditText editTextB;
+    //清空焦点后，作为第一元素夺取焦点。
+    LinearLayout focusLinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        editTextA = (EditText) findViewById(R.id.team_a_name_edit_view);
+        editTextB = (EditText) findViewById(R.id.team_b_name_edit_view);
+        focusLinearLayout = (LinearLayout) findViewById(R.id.focus_linear_layout);
+        focusLinearLayout.setFocusableInTouchMode(true);
     }
 
     public void addThreeForTeamABottom(View view) {
@@ -34,6 +44,8 @@ public class MainActivity extends Activity {
     }
 
     private void addPointForTeamA(int point) {
+        editTextA.clearFocus();
+        editTextB.clearFocus();
         arrayList.add("A" + point);
         teamAScore = teamAScore + point;
         dipalyForTeamA();
@@ -52,6 +64,8 @@ public class MainActivity extends Activity {
     }
 
     private void addPointForTeamB(int point) {
+        editTextA.clearFocus();
+        editTextB.clearFocus();
         arrayList.add("B" + point);
         teamBScore = teamBScore + point;
         dipalyForTeamB();
