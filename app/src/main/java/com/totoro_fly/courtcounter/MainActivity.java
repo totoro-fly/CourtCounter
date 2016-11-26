@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -38,8 +39,10 @@ public class MainActivity extends Activity {
         editTextB.clearFocus();
         enterNameButton.setFocusable(true);
         enterNameButton.setVisibility(View.GONE);
+        InputMethodManager inputMethodManager= (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
     }
-/*EditView可编辑是显示enternamebutton*/
+/*EditView可编辑状态显示enternamebutton*/
     private void EditViewFocusChangeToInvisiblewEnterNameButton() {
         editTextA.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
