@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,18 +18,45 @@ public class MainActivity extends Activity {
     EditText editTextA;
     EditText editTextB;
     //清空焦点后，作为第一元素夺取焦点。
-    LinearLayout focusLinearLayout;
+//    LinearLayout focusLinearLayout;
+    //使用确认button夺取焦点
+    Button enterNameButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        enterNameButton = (Button) findViewById(R.id.enter_name_button);
         editTextA = (EditText) findViewById(R.id.team_a_name_edit_view);
         editTextB = (EditText) findViewById(R.id.team_b_name_edit_view);
-        focusLinearLayout = (LinearLayout) findViewById(R.id.focus_linear_layout);
-        focusLinearLayout.setFocusableInTouchMode(true);
+        editTextA.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b = true) {
+                    if (editTextA.isFocusable() || editTextB.isFocusable())
+                        enterNameButton.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        editTextB.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b = true) {
+                    if (editTextA.isFocusable() || editTextB.isFocusable())
+                        enterNameButton.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
+
+    public void enterNameButton(View view) {
+        editTextA.clearFocus();
+        editTextB.clearFocus();
+        enterNameButton.setFocusable(true);
+        enterNameButton.setVisibility(View.GONE);
+    }
+
 
     public void addThreeForTeamABottom(View view) {
         addPointForTeamA(3);
@@ -44,8 +71,6 @@ public class MainActivity extends Activity {
     }
 
     private void addPointForTeamA(int point) {
-        editTextA.clearFocus();
-        editTextB.clearFocus();
         arrayList.add("A" + point);
         teamAScore = teamAScore + point;
         dipalyForTeamA();
@@ -64,8 +89,6 @@ public class MainActivity extends Activity {
     }
 
     private void addPointForTeamB(int point) {
-        editTextA.clearFocus();
-        editTextB.clearFocus();
         arrayList.add("B" + point);
         teamBScore = teamBScore + point;
         dipalyForTeamB();
