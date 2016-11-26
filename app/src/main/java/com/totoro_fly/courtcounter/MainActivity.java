@@ -30,6 +30,17 @@ public class MainActivity extends Activity {
         enterNameButton = (Button) findViewById(R.id.enter_name_button);
         editTextA = (EditText) findViewById(R.id.team_a_name_edit_view);
         editTextB = (EditText) findViewById(R.id.team_b_name_edit_view);
+        EditViewFocusChangeToInvisiblewEnterNameButton();
+    }
+/*夺取焦点并隐藏*/
+    public void enterNameButton(View view) {
+        editTextA.clearFocus();
+        editTextB.clearFocus();
+        enterNameButton.setFocusable(true);
+        enterNameButton.setVisibility(View.GONE);
+    }
+/*EditView可编辑是显示enternamebutton*/
+    private void EditViewFocusChangeToInvisiblewEnterNameButton() {
         editTextA.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
@@ -49,14 +60,6 @@ public class MainActivity extends Activity {
             }
         });
     }
-
-    public void enterNameButton(View view) {
-        editTextA.clearFocus();
-        editTextB.clearFocus();
-        enterNameButton.setFocusable(true);
-        enterNameButton.setVisibility(View.GONE);
-    }
-
 
     public void addThreeForTeamABottom(View view) {
         addPointForTeamA(3);
@@ -104,7 +107,7 @@ public class MainActivity extends Activity {
         textView.setText(String.valueOf(teamBScore));
     }
 
-    /*回退按键*/
+    /*回退按键功能*/
     public void revocationBottom(View view) {
         int size = arrayList.size();
         /*防止闪退赋值*/
